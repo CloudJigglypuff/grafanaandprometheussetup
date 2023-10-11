@@ -88,7 +88,7 @@ password: admin
 8. Now we can create our monitoring panels. Go back to the main page, click on '+' (Create) in the left bar and select "Dashboard";
 9. Click on "Add an empty panel";
 10. Select "Prometheus" as data source (if not selected):
-![Untitled](https://github.com/CloudJigglypuff/grafanaandprometheussetup/assets/76413235/3a10b093-5161-4d3c-90ba-5d4c78978e39)
+![Untitled](https://github.com/CloudJigglypuff/grafanaandprometheussetup/assets/76413235/55c214cb-3990-42df-917b-09cbd106c2ff)
 1. **CPU.** In this step, we will set up a panel to monitor CPU utilization:
    1. Enter the following query:<br>`avg without (cpu)(irate(node_cpu_seconds_total{mode!="idle"}[5m]))`<br><br>
     `irate` calculates the per-second instant rate of increase of the time series in the range vector.<br>
@@ -96,11 +96,11 @@ password: admin
     `mode!="idle"` is used to ignore iddle time.
    2. Add `{{mode}}` to the "Legend" field under the query.
    3. To display correct %, go to the "Display" menu on the right, find "Axes", then locate the "Unit" field under "Left Y", and specify: **Percent (0.0-1.0)**:
-    ![Untitled2](https://github.com/CloudJigglypuff/grafanaandprometheussetup/assets/76413235/b009605f-ff0e-49f6-8470-dc64821a97f5)
+    ![Untitled2](https://github.com/CloudJigglypuff/grafanaandprometheussetup/assets/76413235/2f6b7199-2281-4d27-b0ce-96efb3f3f5e6)
   3. Click on "Apply":
-  ![Pasted image 20231011022109](https://github.com/CloudJigglypuff/grafanaandprometheussetup/assets/76413235/07186150-a8dd-4de1-89da-ab1e5db5127e)
+  ![Pasted image 20231011022109](https://github.com/CloudJigglypuff/grafanaandprometheussetup/assets/76413235/d7fb7080-c68a-4831-b040-1a38ce635dfc)
   4. As a result, you will see your Dashboard with the newly created CPU panel:
-	![Pasted image 20231011022500](https://github.com/CloudJigglypuff/grafanaandprometheussetup/assets/76413235/d24d8faf-a4d4-4bb3-9e38-becf536f18ae)
+	![Pasted image 20231011022500](https://github.com/CloudJigglypuff/grafanaandprometheussetup/assets/76413235/8e398328-82d5-482f-942f-3914dfac9914)
 3. **Memory Usage.** Let's add a panel to monitor memory usage. 
 	1. Click on "Add panel"; 
 	2. Click on "Add an empty panel" and add the following queries:
@@ -132,4 +132,5 @@ password: admin
 	4. To see correct values in the graph, enter "kilobytes/sec" in the "Unit" field;
   5. Click on "Apply"
 7. Now you can save the last panel and save the Dashboard. Here is a screenshot of the final result:
-![Pasted image 20231011221935](https://github.com/CloudJigglypuff/grafanaandprometheussetup/assets/76413235/d31d6fc8-39d6-4d0f-883e-1983ba5c0f83)
+![Pasted image 20231011221935](https://github.com/CloudJigglypuff/grafanaandprometheussetup/assets/76413235/3ec5a74c-60a3-4983-a635-4a7a2e6219ce)
+
