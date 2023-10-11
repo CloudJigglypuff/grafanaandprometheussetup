@@ -119,6 +119,7 @@ password: admin
 	2. Click on "Add an empty panel" and add the following query:<br>`node_filesystem_avail_bytes{device!="tmpfs", device!="none"}`
   	3. Add `{{device}}` to the "Legend" field under the query.
 	4. To see correct values in the graph, enter "Bytes(IEC)" in the "Unit" field;
+ 	5. Click on "Apply"
 6. **Network Traffic.** In the last panel, we will monitor network traffic.
 	1. Click on "Add panel";
 	2. Click on "Add an empty panel" and the following queries:
